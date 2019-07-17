@@ -1,0 +1,7 @@
+applications:
+- name: acc
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  memory: 1G
+  path: build/libs/acc-0.0.1-SNAPSHOT.jar
+  services:
+    - my-user-provided-service

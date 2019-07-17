@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+    "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.product.acc.domain.app.repository.testinfo.TestInfoRepository">
+    <select id="getTest" resultType="com.product.acc.domain.app.model.TestInfo">
+    <![CDATA[
+        SELECT
+            id,
+            col1
+        FROM
+            matmau5.test1
+    ]]>
+    </select>
+</mapper>
