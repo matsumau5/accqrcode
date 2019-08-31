@@ -5,6 +5,7 @@ import com.product.acc.domain.app.service.qrcode.QRcodeService;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +32,7 @@ public class QRcodeController {
 //        return qrcodeService.getQRcode(qrRequestBean).getImageQR();
 //    }
     @PostMapping
-    public HttpEntity<byte[]> getAllImages(@RequestBody QrRequestBean qrRequestBean) {
+    public HttpEntity<byte[]> getAllImages(@Validated @RequestBody QrRequestBean qrRequestBean) {
         byte[] byteImage = qrcodeService.getQRcode(qrRequestBean).getImageQR();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_JPEG);
